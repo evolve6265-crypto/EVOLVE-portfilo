@@ -9,7 +9,7 @@
   position: absolute; inset: 0; z-index: -1; overflow: hidden; border-radius: 0;
 }
 .hero-video-wrap video {
-  width: 100%; height: 100%; object-fit: cover; opacity: 0.35;
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.5;
   filter: saturate(120%) contrast(110%);
 }
 .hero-video-wrap::after {
@@ -71,8 +71,18 @@
     #060911;
   display: flex; align-items: flex-end; justify-content: center; overflow: hidden;
 }
-.portrait img { position: absolute; bottom: 0; height: 96%; width: auto; object-fit: contain;
+/* Transparent cutout (png) — anchored to the bottom */
+.portrait img:not(.portrait-img) { position: absolute; bottom: 0; height: 96%; width: auto; object-fit: contain;
   filter: drop-shadow(0 0 40px rgba(56,225,255,0.25)); }
+/* Framed image / gif — covers the whole cell */
+.portrait .portrait-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  z-index: 0; opacity: 0.96; filter: saturate(112%) contrast(104%);
+  -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 72%, transparent 100%);
+}
+.portrait:has(.portrait-img) { background: #060911; }
+.portrait .portrait-img + .ring, .portrait .ring { z-index: 1; }
 /* SVG fallback silhouette */
 .portrait .silhouette { position: relative; z-index: 1; width: 78%; opacity: 0.9; }
 .portrait .ring {

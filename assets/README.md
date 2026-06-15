@@ -5,8 +5,9 @@ visuals). To make it feel exactly like your reference, drop in these files:
 
 | File | Used by | Notes |
 |------|---------|-------|
-| `hero.mp4` | `index.html` hero background | A dark anime / tactical-HUD loop. Keep it short (8–15s), muted, ~1080p, compressed (< 6 MB ideal). The `<video>` tag already points here. |
-| `portrait.png` | hero portrait cell | A **transparent** character cutout (e.g. adult Robin in a suit). To use it, open `index.html`, find the `.portrait` block, and replace the inline `<svg class="silhouette">…</svg>` with `<img src="assets/portrait.png" alt="Operator">`. |
+| `hero.mp4` | `index.html` hero background | **Active** — the cinematic loop behind the hero. Replace this file to change it (muted, ~1080p, compressed). |
+| `portrait.gif` | hero portrait cell | **Active** — the tuxedo operator shown in the portrait cell. Swap this file to change it. |
+| `portrait.png` | hero portrait cell (alt) | If you have a **transparent** cutout instead, drop it here and point the `.portrait-img` `src` at `assets/portrait.png`. |
 | `hero-poster.svg` | video poster fallback | Already included — shown before the video loads or if it's missing. |
 
 ### Where to find free, license-safe media
