@@ -12,7 +12,7 @@ Vercel, Netlify or GitHub Pages by uploading the files as-is.
 - **Frosted-glass navbar** locked to the viewport (glassmorphism blur)
 - **Liquid page transitions** powered by GSAP (no blank-flash between pages)
 - **Bento-box grid** homepage with thin neon divider lines
-- **Cinematic video background** slot (`assets/hero.mp4`) with SVG poster fallback
+- **Live animated background** — a generated canvas HUD/particle constellation (`js/scene.js`) that loops forever and reacts to the cursor, so no video file is required. Optional `assets/hero.mp4` slot still layers on top if you add one.
 - **Masked text reveal** — hero headline slides up out of a line mask on load
 - **Character portrait** cell (animated SVG, swap in your own transparent PNG)
 - **Infinite text marquee** of the tech stack in outlined display type
